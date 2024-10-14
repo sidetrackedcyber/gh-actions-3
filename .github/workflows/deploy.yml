@@ -11,7 +11,7 @@ jobs:
           with:
             node-version: 20
         - name: Install dependencies
-          uses: npm ci
+          run: npm ci
         - name: Install modules
           run: yarn
         - name: Run ESLint
