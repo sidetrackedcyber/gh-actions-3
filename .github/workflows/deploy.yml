@@ -6,7 +6,11 @@ jobs:
       steps:
         - name: Get Code
           uses: actions/checkout@v3
-        - name: Install modules
-          run: yarn
+        - name: Install NodeJS
+          uses: actions/setup-node@v4
+          with:
+            node-version: 20
+        - name: Install dependencies
+          run: npm ci
         - name: Run ESLint
-          run: yarn lint:js
+          run: npm run lint
